@@ -6,7 +6,7 @@ from utils import utils
 
 class TestModule1(unittest.TestCase):
     def test(self):
-        test_directory = "../data/module1Test"
+        test_directory = "C:/Users/pc/Desktop/Project-Template-Nazarih/data/module1Test"
         image_files = [file for file in os.listdir(test_directory) if file.endswith((".jpg", ".png"))]
         image_files.sort()
         address_file = [file for file in os.listdir(test_directory) if file.endswith('.txt')][0]
@@ -34,9 +34,9 @@ class TestModule1(unittest.TestCase):
                     state = state.transitions[char]
 
                 if fa.is_final(state):
-                    self.assertEqual('1', address[1][img_ind], '1')
-                else:
                     self.assertEqual('0', address[1][img_ind], '0')
+                else:
+                    self.assertEqual('1', address[1][img_ind], '1')
 
 
 if __name__ == "__main__":
