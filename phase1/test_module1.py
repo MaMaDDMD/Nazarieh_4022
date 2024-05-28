@@ -34,9 +34,9 @@ class TestModule1(unittest.TestCase):
                     state = state.transitions[char]
 
                 if fa.is_final(state):
-                    self.assertEqual('0', address[1][img_ind], '0')
-                else:
                     self.assertEqual('1', address[1][img_ind], '1')
+                else:
+                    self.assertEqual('0', address[1][img_ind], '0')
 
 
 if __name__ == "__main__":

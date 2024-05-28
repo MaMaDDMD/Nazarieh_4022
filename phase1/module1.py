@@ -31,13 +31,13 @@ def solve(image: imageType) -> DFA:
     fa.states.append(State(None))
     state_image.update({fa.states[0]: image})
     check = check_one_or_zero(image)
-    if check == 0:
+    if check == 1:
         fa.states.remove(fa.states[0])
         fa.states.append(final)
         fa.init_state = final
         fa.add_final_state(final)
         flag = False
-    elif check == 1:
+    elif check == 0:
         fa.states.remove(fa.states[0])
         fa.states.append(trap)
         fa.init_state = trap
@@ -91,9 +91,9 @@ def solve(image: imageType) -> DFA:
                         l += 1
                         m = int(length / 2)
                 check = check_one_or_zero(image_arr)
-                if check == 1:
+                if check == 0:
                     state.add_transition(f"{k}", trap)
-                elif check == 0:
+                elif check == 1:
                     state.add_transition(f"{k}", final)
                 else:
                     j += 1

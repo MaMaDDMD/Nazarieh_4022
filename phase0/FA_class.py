@@ -77,7 +77,9 @@ class DFA:
         self.final_states.append(state)
 
     def get_state_by_id(self, id: int) -> State:
-        return State(filter(lambda s: s.id == id, self.states))
+        for state in self.states:
+            if state.id == id:
+                return state
 
     def is_final(self, state: State) -> bool:
         return state in self.final_states
