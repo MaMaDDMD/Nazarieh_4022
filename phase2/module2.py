@@ -38,7 +38,8 @@ def solve(json_str: str, image: imageType) -> bool:
             counter += 1
         else:
             flag = False
-    print(f"{int(counter * 100.0 / len(bit_addresses))}% similarity")
+    global percentage
+    percentage = int(counter * 100.0 / len(bit_addresses))
     return flag
 
 
